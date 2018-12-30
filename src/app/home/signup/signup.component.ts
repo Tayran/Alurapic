@@ -6,6 +6,7 @@ import { NewUser } from './newUser';
 import { SignupService } from './signup.service';
 import { Router } from '@angular/router';
 import { PlatformDetectorService } from '../../core/platform-detector/platform-detector.service';
+import { userNamePassword } from './username-password.validator';
 
 @Component({
     templateUrl: './signup.component.html',
@@ -56,6 +57,8 @@ export class SignupComponent implements OnInit {
                     Validators.maxLength(14)
                 ]
             ]
+        }, {
+            validator: userNamePassword
         });
         // tslint:disable-next-line:no-unused-expression
         this._platformDetector.isPlatformBrowser() && this.emailInput.nativeElement.focus();

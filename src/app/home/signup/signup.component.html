@@ -4,45 +4,45 @@
         <input #emailInput formControlName="email" placeholder="email" class="form-control" autofocus >
         <ap-vmessage 
             text="Email is required!"
-            *ngIf="signupForm.get('email').errors?.required && form.submitted">
+            *ngIf="signupForm.get('email').errors?.required && (form.submitted || signupForm.get('email').touched)">
         </ap-vmessage>
         <ap-vmessage 
             text="Invalid e-mail"
-            *ngIf="signupForm.get('email').errors?.email && form.submitted">
+            *ngIf="signupForm.get('email').errors?.email && (form.submitted || signupForm.get('email').touched)">
         </ap-vmessage>
     </div>
     <div class="form-group">
         <input formControlName="fullName" placeholder="full name" class="form-control">
         <ap-vmessage 
             text="Full name is required!"
-            *ngIf="signupForm.get('fullName').errors?.required && form.submitted">
+            *ngIf="signupForm.get('fullName').errors?.required && (form.submitted || signupForm.get('fullName').touched)">
         </ap-vmessage>
         <ap-vmessage 
             text="Minimum length is 2"
-            *ngIf="signupForm.get('fullName').errors?.minlength && form.submitted">
+            *ngIf="signupForm.get('fullName').errors?.minlength && (form.submitted || signupForm.get('fullName').touched)">
         </ap-vmessage>
         <ap-vmessage 
             text="Maximum length is 40"
-            *ngIf="signupForm.get('fullName').errors?.maxlength && form.submitted">
+            *ngIf="signupForm.get('fullName').errors?.maxlength && (form.submitted || signupForm.get('fullName').touched)">
         </ap-vmessage>
     </div>
     <div class="form-group">
         <input formControlName="userName" placeholder="user name" class="form-control">
         <ap-vmessage 
             text="User name is required!"
-            *ngIf="signupForm.get('userName').errors?.required && form.submitted">
+            *ngIf="signupForm.get('userName').errors?.required && (form.submitted || signupForm.get('userName').touched)">
         </ap-vmessage>
         <ap-vmessage 
             text="Minimum length is 2"
-            *ngIf="signupForm.get('userName').errors?.minlength && form.submitted">
+            *ngIf="signupForm.get('userName').errors?.minlength && (form.submitted || signupForm.get('userName').touched)">
         </ap-vmessage>
         <ap-vmessage 
             text="Maximum length is 30"
-            *ngIf="signupForm.get('userName').errors?.maxlength && form.submitted">
+            *ngIf="signupForm.get('userName').errors?.maxlength && (form.submitted || signupForm.get('userName').touched)">
         </ap-vmessage>
         <ap-vmessage 
             text="Must be lower case"
-            *ngIf="signupForm.get('userName').errors?.lowerCase && form.submitted">
+            *ngIf="signupForm.get('userName').errors?.lowerCase && (form.submitted || signupForm.get('userName').touched)">
         </ap-vmessage>
 
         <ap-vmessage 
@@ -55,15 +55,15 @@
         <input formControlName="password" type="password" placeholder="password" class="form-control">
         <ap-vmessage 
             text="Password is required!"
-            *ngIf="signupForm.get('password').errors?.required && form.submitted">
+            *ngIf="signupForm.get('password').errors?.required && (form.submitted || signupForm.get('password').touched)">
         </ap-vmessage>
         <ap-vmessage 
             text="Minimum length is 8"
-            *ngIf="signupForm.get('password').errors?.minlength && form.submitted">
+            *ngIf="signupForm.get('password').errors?.minlength && (form.submitted || signupForm.get('password').touched)">
         </ap-vmessage>
         <ap-vmessage 
             text="Maximum length is 14"
-            *ngIf="signupForm.get('password').errors?.maxlength && form.submitted">
+            *ngIf="signupForm.get('password').errors?.maxlength && (form.submitted || signupForm.get('password').touched)">
         </ap-vmessage>
     </div>
     <button class="btn btn-primary btn-block">Register</button>
